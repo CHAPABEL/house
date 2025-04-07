@@ -227,11 +227,17 @@ img {
     display: none;
   }
 
+  .center_section {
+    height: 50%;
+    align-items: center;
+  }
+
   .loading {
     padding-left: 0;
+    padding-top: 5px;
   }
   .loading--bottom_text {
-    font-size: 10px;
+    font-size: 5px;
   }
   .loading--text {
     font-size: 10px;

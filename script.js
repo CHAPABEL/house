@@ -7,7 +7,7 @@ function addSquares() {
   const totalSquareWidth = squareWidth + gap;
 
   const numberOfSquares = Math.floor(barWidth / totalSquareWidth);
-
+  loadingBar.innerHTML = "";
   for (let i = 0; i < numberOfSquares; i++) {
     const square = document.createElement("div");
     square.classList.add("loading--square");
@@ -17,6 +17,9 @@ function addSquares() {
       square.style.opacity = "1";
     }, i * 200);
   }
+  setTimeout(() => {
+    addSquares();
+  }, numberOfSquares * 200 + 1000);
 }
 
 window.onload = addSquares;
