@@ -18,7 +18,7 @@ dd {
 span {
   padding: 0;
   margin: 0;
-  line-height: 1; /* чтобы убрать лишние расстояния */
+  line-height: 1;
 }
 
 body {
@@ -30,7 +30,11 @@ body {
 }
 
 main {
-  padding: 25px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }
 
 img {
@@ -42,12 +46,16 @@ img {
 
 .main_section {
   display: flex;
+  position: relative;
+  margin: 25px 25px;
+  z-index: 600;
   flex-direction: column;
 }
 
 .top_text {
   font-size: 86px;
   font-weight: 600;
+
   padding: 0;
   color: #193b72;
 }
@@ -86,13 +94,18 @@ img {
   z-index: 400;
   display: flex;
   margin-top: 5%;
-  justify-content: center;
+
+  justify-content: space-around;
+}
+
+.house {
+  width: 80%;
 }
 
 .loading {
   display: flex;
+  width: 65%;
   flex-direction: column;
-  padding-left: 8%;
   padding-top: 20px;
   gap: 8px;
 }
@@ -110,19 +123,17 @@ img {
 }
 
 .loading--div {
+  display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 12px;
-  align-items: start;
-  width: 45%;
+  width: 40%;
 }
 
 .loading--bar {
-  height: 30px;
-  width: 90%;
-  border: 4px;
-  border-width: 4px;
-  border-style: solid;
-  border-color: #5681f1;
+  height: 20px;
+  width: 94%;
+  border: 4px solid #5681f1;
   border-radius: 15px;
   background-color: #cfd4f3;
   padding: 7px 10px;
@@ -143,17 +154,18 @@ img {
 .right_image {
   object-fit: cover;
   position: absolute;
-  width: 500%;
+  width: 100%;
   right: 0;
   top: 0;
+  height: 100vh;
 }
 
 .background-stock {
   position: absolute;
   z-index: 100;
   top: 0;
-  right: 7px;
-  width: 49%;
+  right: 0;
+  width: 50%;
   height: 100%;
   background-image: linear-gradient(45deg, #ccc 25%, transparent 25%),
     linear-gradient(-45deg, #ccc 25%, transparent 25%),
@@ -162,4 +174,76 @@ img {
   background-size: 20px 20px;
   background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
   background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .top_text {
+    font-size: 32px;
+  }
+
+  .bottom_text--svg,
+  .bottom_text--center,
+  .bottom_text--year {
+    font-size: 17px;
+  }
+  .bottom_text--svg {
+    display: none;
+  }
+
+  .loading {
+    padding-left: 0;
+  }
+
+  .loading--bottom_text {
+    font-size: 15px;
+  }
+  .loading--text {
+    font-size: 10px;
+  }
+
+  .right_image {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .loading--bar {
+    border-width: 2px;
+    width: auto;
+    height: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .top_text {
+    font-size: 24px;
+  }
+
+  .bottom_text--svg,
+  .bottom_text--center,
+  .bottom_text--year {
+    font-size: 12px;
+  }
+  .bottom_text--svg {
+    display: none;
+  }
+
+  .loading {
+    padding-left: 0;
+  }
+  .loading--bottom_text {
+    font-size: 10px;
+  }
+  .loading--text {
+    font-size: 10px;
+  }
+
+  .right_image {
+    width: 100%;
+  }
+
+  .loading--bar {
+    border-width: 2px;
+    width: auto;
+    height: 10px;
+  }
 }
