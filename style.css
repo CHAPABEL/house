@@ -1,0 +1,165 @@
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+span {
+  padding: 0;
+  margin: 0;
+  line-height: 1; /* чтобы убрать лишние расстояния */
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+main {
+  padding: 25px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* выше просто сброс стилей */
+
+.main_section {
+  display: flex;
+  flex-direction: column;
+}
+
+.top_text {
+  font-size: 86px;
+  font-weight: 600;
+  padding: 0;
+  color: #193b72;
+}
+
+.bottom_text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bottom_text--svg,
+.bottom_text--center,
+.bottom_text--year {
+  font-size: 20px;
+}
+
+.bottom_text--svg {
+  color: #5681f1;
+  font-weight: 200;
+}
+
+.bottom_text--center {
+  color: #193b72;
+}
+
+.bottom_text--year {
+  background-color: #5681f1;
+  color: #fff;
+  padding: 6px 8px 6px 8px;
+  border-radius: 15px;
+}
+
+.center_section {
+  width: 100%;
+  position: relative;
+  z-index: 400;
+  display: flex;
+  margin-top: 5%;
+  justify-content: center;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  padding-left: 8%;
+  padding-top: 20px;
+  gap: 8px;
+}
+
+.loading--text {
+  font-size: 20px;
+  font-weight: 500;
+  color: #1a2847;
+  text-transform: uppercase;
+}
+
+.loading--bottom_text {
+  font-weight: 600;
+  color: #868990;
+}
+
+.loading--div {
+  flex-direction: column;
+  gap: 12px;
+  align-items: start;
+  width: 45%;
+}
+
+.loading--bar {
+  height: 30px;
+  width: 90%;
+  border: 4px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: #5681f1;
+  border-radius: 15px;
+  background-color: #cfd4f3;
+  padding: 7px 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.loading--square {
+  width: 10px;
+  height: 100%;
+  background-color: #5681f1;
+  margin-right: 2px;
+  opacity: 0;
+  transition: opacity 0s;
+}
+
+.right_image {
+  object-fit: cover;
+  position: absolute;
+  width: 500%;
+  right: 0;
+  top: 0;
+}
+
+.background-stock {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  right: 7px;
+  width: 49%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #ccc 25%, transparent 25%),
+    linear-gradient(-45deg, #ccc 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #ccc 75%),
+    linear-gradient(-45deg, transparent 75%, #ccc 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  background-color: white;
+}
